@@ -38,6 +38,7 @@ class MainActivity : ComponentActivity() {
                 state.error != null -> showError(state.error)
                 state.points.isNotEmpty() -> {
                     Log.d(TAG, "onCreate: show points activity...")
+                    binding.progressBar.visibility = View.GONE
                 }
             }
         }
