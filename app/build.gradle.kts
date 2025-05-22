@@ -72,4 +72,5 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
     implementation("org.jetbrains.kotlin:kotlin-parcelize-runtime:2.0.20")
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }
