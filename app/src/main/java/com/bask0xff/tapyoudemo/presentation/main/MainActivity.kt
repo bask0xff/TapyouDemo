@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.lifecycle.ViewModelProvider
-import com.bask0xff.tapyoudemo.R
 import com.bask0xff.tapyoudemo.databinding.ActivityMainBinding
 import com.bask0xff.tapyoudemo.presentation.points.PointsActivity
 
