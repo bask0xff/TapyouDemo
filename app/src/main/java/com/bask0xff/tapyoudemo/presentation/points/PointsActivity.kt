@@ -14,7 +14,7 @@ import com.bask0xff.tapyoudemo.databinding.ActivityMainBinding
 import com.bask0xff.tapyoudemo.databinding.ActivityPointsBinding
 import com.bask0xff.tapyoudemo.domain.model.Point
 
-class PointsActivity : AppCompatActivity() {
+class PointsActivity : ComponentActivity() {
     private lateinit var binding: ActivityPointsBinding
     private lateinit var viewModel: PointsViewModel
 

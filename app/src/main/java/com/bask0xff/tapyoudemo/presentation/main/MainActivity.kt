@@ -9,6 +9,7 @@ import androidx.activity.ComponentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bask0xff.tapyoudemo.R
 import com.bask0xff.tapyoudemo.databinding.ActivityMainBinding
+import com.bask0xff.tapyoudemo.presentation.points.PointsActivity
 
 class MainActivity : ComponentActivity() {
 
@@ -39,6 +40,11 @@ class MainActivity : ComponentActivity() {
                 state.points.isNotEmpty() -> {
                     Log.d(TAG, "onCreate: show points activity...")
                     binding.progressBar.visibility = View.GONE
+
+                    startActivity(
+                        Intent(this, PointsActivity::class.java)
+                            .putParcelableArrayListExtra("points", ArrayList(state.points))
+                    )
                 }
             }
         }
