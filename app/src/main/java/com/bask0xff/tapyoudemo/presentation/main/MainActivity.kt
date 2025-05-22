@@ -49,6 +49,7 @@ class MainActivity : ComponentActivity() {
 
     private fun showError(message: String) {
         binding.progressBar.visibility = View.GONE
+        Log.e(TAG, "showError: $message", )
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 }
