@@ -1,5 +1,6 @@
 package com.bask0xff.tapyoudemo.presentation.main
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,10 +12,12 @@ import kotlinx.coroutines.launch
 import com.bask0xff.tapyoudemo.presentation.util.Result
 
 class MainViewModel(private val getPointsUseCase: GetPointsUseCase) : ViewModel() {
+    private val TAG = "MainViewModel"
     private val _state = MutableLiveData<MainScreenState>()
     val state: LiveData<MainScreenState> get() = _state
 
     fun fetchPoints(count: Int) {
+        Log.d(TAG, "fetchPoints: request points: $count")
         _state.value = MainScreenState(isLoading = true)
         viewModelScope.launch {
             val result: Result<List<Point>> = getPointsUseCase(count)
