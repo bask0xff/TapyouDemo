@@ -16,9 +16,10 @@ class MainViewModel(private val getPointsUseCase: GetPointsUseCase) : ViewModel(
     fun fetchPoints(count: Int) {
         _state.value = MainScreenState(isLoading = true)
         viewModelScope.launch {
-            when (val result = getPointsUseCase(count)) {
+            val result: Result<List<Point>> = getPointsUseCase(count) // Явно указываем тип
+            when (result) {
                 is Result.Success -> _state.postValue(MainScreenState(points = result.data))
-                is Result.Error -> _state.postValue(MainScreenState(error = result.exception.message ?: "Unknown error"))
+                is Result.Error -> _state.postValue(MainScreenState(error = result.exception.message ?: "Неизвестная ошибка"))
             }
         }
     }
