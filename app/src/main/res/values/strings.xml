@@ -3,4 +3,5 @@
     <string name="enter_points_count">Введите количество точек</string>
     <string name="info_text">Тестовый график</string>
     <string name="go">Поехали!</string>
+    <string name="unknown_error">Неизвестная ошибка</string>
 </resources>
